@@ -8,7 +8,6 @@ body {
     background-color: #87CEEB; /* Light Sky Blue */
     font-family: sans-serif;
     overflow: hidden; /* Hide scrollbars */
-    /* Prevent text selection cursor on mobile */
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10+ */
     user-select: none;
@@ -17,17 +16,14 @@ body {
 /* Game container styling */
 #game-container {
     position: relative;
-    /* Make width responsive, max out at 400px */
     width: 95vw;
     max-width: 400px;
-     /* Make height responsive, relative to width */
     height: 80vh;
     max-height: 600px;
     background-color: #8FBC8F; /* Dark Sea Green (ground) */
     border: 5px solid #8B4513; /* Saddle Brown (fence posts) */
-    overflow: hidden; /* Keep elements inside */
+    overflow: hidden;
     cursor: pointer;
-     /* Prevents callout menu on long press (iOS) */
     -webkit-touch-callout: none;
 }
 
@@ -35,29 +31,27 @@ body {
 .cow {
     position: absolute;
     bottom: 30px;
-    /* Initial position set by JS */
     width: 40px;
     height: 40px;
-    transition: left 0.1s linear; /* Smooth movement */
-    /* Using emoji for fun */
+    transition: left 0.1s linear;
     background-color: transparent;
     border: none;
-    font-size: 38px; /* Adjust emoji size if needed */
+    font-size: 38px;
     text-align: center;
     line-height: 40px;
     box-shadow: none;
-    z-index: 5; /* Ensure player is above ground, below overlays */
+    z-index: 5;
 }
 
 /* Obstacle styling */
 .obstacle {
     position: absolute;
-    width: 50px; /* Consider scaling with screen size if needed */
+    width: 50px;
     height: 50px;
-    background-color: #A0522D; /* Sienna (like a hay bale or rock) */
-    border: 2px solid #654321; /* Darker brown */
-    top: -60px; /* Start above screen */
-    z-index: 4; /* Below player */
+    background-color: #A0522D;
+    border: 2px solid #654321;
+    top: -60px;
+    z-index: 4;
 }
 
 /* Score display styling */
@@ -65,10 +59,10 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    font-size: 20px; /* Slightly smaller for mobile */
+    font-size: 20px;
     color: white;
     text-shadow: 1px 1px 2px black;
-    z-index: 6; /* Above most things */
+    z-index: 6;
 }
 
 /* Styling for overlay screens (start/game over) */
@@ -85,9 +79,9 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 10; /* On top of everything */
-    padding: 10px; /* Add padding */
-    box-sizing: border-box; /* Include padding in dimensions */
+    z-index: 10;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 /* Initially hide the game over screen */
@@ -97,7 +91,7 @@ body {
 
 /* Button styling */
 button {
-    padding: 12px 25px; /* Slightly larger buttons */
+    padding: 12px 25px;
     font-size: 18px;
     cursor: pointer;
     margin-top: 20px;
