@@ -2,60 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Crazy Cattle Run</title>
-
-    <!-- Link to the Manifest file -->
-    <link rel="manifest" href="manifest.json">
-
-    <!-- Theme Color for Browser UI -->
-    <meta name="theme-color" content="#8FBC8F"/>
-
-    <!-- Link to the external CSS file -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Coin Flip Simulation</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Basic Apple Touch Icon (optional but good practice) -->
-    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
-
 </head>
 <body>
-    <!-- tabindex needed for potential keyboard focus -->
-    <div id="game-container" tabindex="0">
-        <div id="start-screen">
-            <h1>Crazy Cattle Run</h1>
-            <p>Inspired by Crazy Cattle 3D</p>
-            <p class="touch-instructions">
-                Tap Left/Right side to Dodge! <br> (Arrow keys work too)
-            </p>
-            <button id="start-button">Start Game</button>
+    <div class="container">
+        <h1>Simple Coin Flip Simulation</h1>
+
+        <p class="warning">
+            <strong>This is a simulation!</strong> Do NOT use this for real gambling or money.
+        </p>
+
+        <div id="coin" class="coin">
+            <div class="side heads">Heads</div>
+            <div class="side tails">Tails</div>
         </div>
-        <div id="game-over-screen">
-            <h1>Game Over!</h1>
-            <p>Final Score: <span id="final-score">0</span></p>
-            <button id="restart-button">Play Again</button>
-        </div>
-        <div id="score">Score: 0</div>
-        <div class="cow" id="player">🐄</div> <!-- Cow Emoji -->
-        <!-- Obstacles will be added here by JavaScript -->
+
+        <button id="flipButton">Flip Coin</button>
+
+        <p id="result"></p>
     </div>
 
-    <!-- Link to the external JavaScript file -->
-    <!-- 'defer' ensures HTML is parsed before script runs -->
-    <script src="script.js" defer></script>
-
-    <!-- Service Worker Registration Script -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => { // Register after page load
-                navigator.serviceWorker.register('sw.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                    })
-                    .catch(error => {
-                        console.log('ServiceWorker registration failed: ', error);
-                    });
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
